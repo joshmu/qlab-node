@@ -1,68 +1,72 @@
 export default {
   alwaysReply: {
-    '{boolean}': '/alwaysReply {boolean}',
+    '{number}': '/alwaysReply {number}',
   },
   auditionWindow: {
-    '{true|false}': '/auditionWindow {true|false}',
+    '{number}': '/auditionWindow {number}',
   },
   toggleAuditionWindow: '/toggleAuditionWindow',
   fontNames: '/fontNames',
   fontFamiliesAndStyles: '/fontFamiliesAndStyles',
   liveFadePreview: {
-    '{true|false}': '/liveFadePreview {true|false}',
+    '{number}': '/liveFadePreview {number}',
   },
   toggleLiveFadePreview: '/toggleLiveFadePreview',
   overrides: {
-    midiInputEnabled: {
-      '{true|false}': '/overrides/midiInputEnabled {true|false}',
+    artNetEnabled: {
+      '{number}': '/overrides/artNetEnabled {number}',
     },
+  },
+  toggleArtNet: '/overrides/toggleArtNet',
+  midiInputEnabled: {
+    '{number}': '/overrides/midiInputEnabled {number}',
   },
   toggleMidiInput: '/overrides/toggleMidiInput',
   midiOutputEnabled: {
-    '{true|false}': '/overrides/midiOutputEnabled {true|false}',
+    '{number}': '/overrides/midiOutputEnabled {number}',
   },
   toggleMidiOutput: '/overrides/toggleMidiOutput',
   mscInputEnabled: {
-    '{true|false}': '/overrides/mscInputEnabled {true|false}',
+    '{number}': '/overrides/mscInputEnabled {number}',
   },
   toggleMscInput: '/overrides/toggleMscInput',
   mscOutputEnabled: {
-    '{true|false}': '/overrides/mscOutputEnabled {true|false}',
+    '{number}': '/overrides/mscOutputEnabled {number}',
   },
   toggleMscOutput: '/overrides/toggleMscOutput',
   sysexInputEnabled: {
-    '{true|false}': '/overrides/sysexInputEnabled {true|false}',
+    '{number}': '/overrides/sysexInputEnabled {number}',
   },
   toggleSysexInput: '/overrides/toggleSysexInput',
   sysexOutputEnabled: {
-    '{true|false}': '/overrides/sysexOutputEnabled {true|false}',
+    '{number}': '/overrides/sysexOutputEnabled {number}',
   },
   toggleSysexOutput: '/overrides/toggleSysexOutput',
   oscInputEnabled: {
-    '{true|false}': '/overrides/oscInputEnabled {true|false}',
+    '{number}': '/overrides/oscInputEnabled {number}',
   },
   toggleOscInput: '/overrides/toggleOscInput',
   oscOutputEnabled: {
-    '{true|false}': '/overrides/oscOutputEnabled {true|false}',
+    '{number}': '/overrides/oscOutputEnabled {number}',
   },
   toggleOscOutput: '/overrides/toggleOscOutput',
   timecodeInputEnabled: {
-    '{true|false}': '/overrides/timecodeInputEnabled {true|false}',
+    '{number}': '/overrides/timecodeInputEnabled {number}',
   },
   toggleTimecodeInput: '/overrides/toggleTimecodeInput',
   timecodeOutputEnabled: {
-    '{true|false}': '/overrides/timecodeOutputEnabled {true|false}',
+    '{number}': '/overrides/timecodeOutputEnabled {number}',
   },
   toggleTimecodeOutput: '/overrides/toggleTimecodeOutput',
   overrideWindow: {
-    '{true|false}': '/overrideWindow {true|false}',
+    '{number}': '/overrideWindow {number}',
   },
   toggleOverrideWindow: '/toggleOverrideWindow',
   replyFormat: {
     '{format_string}': '/replyFormat {format_string}',
   },
   timecodeWindow: {
-    '{true|false}': '/timecodeWindow {true|false}',
+    '{number}': '/timecodeWindow {number}',
   },
   toggleTimecodeWindow: '/toggleTimecodeWindow',
   version: '/version',
@@ -80,32 +84,50 @@ export default {
   selectedCues: '/selectedCues',
   runningCues: '/runningCues',
   runningOrPausedCues: '/runningOrPausedCues',
+  shallow: '/cueLists/shallow',
+  uniqueIDs: '/cueLists/uniqueIDs',
   dashboard: {
-    newCueWithChanges: '/dashboard/newCueWithChanges',
+    clear: '/dashboard/clear',
   },
-  newCueWithAll: '/dashboard/newCueWithAll',
-  revert: '/dashboard/revert',
   updateLatestCue: '/dashboard/updateLatestCue',
   updateOriginatingCues: '/dashboard/updateOriginatingCues',
+  updateSelectedCues: '/dashboard/updateSelectedCues',
+  newCueWithAll: '/dashboard/newCueWithAll',
+  newCueWithChanges: '/dashboard/newCueWithChanges',
+  recordAllToLatest: '/dashboard/recordAllToLatest',
+  recordAllToSelected: '/dashboard/recordAllToSelected',
+  revert: '/dashboard/revert',
+  redo: '/dashboard/redo',
+  mode: {
+    '{string}': '/dashboard/mode {string}',
+  },
+  nextMode: '/dashboard/nextMode',
   setLight: {
     '{string}': {
-      '{number}': '/dashboard/setLight {string} {number}',
+      '{setting}': {
+        '{time}': '/dashboard/setLight {string} {setting} {time}',
+      },
     },
   },
+  undo: '/dashboard/undo',
   delete: {
     '{cue_number}': '/delete/{cue_number}',
   },
   delete_id: {
     '{cue_id}': '/delete_id/{cue_id}',
   },
+  active: '/delete/active',
   selected: '/delete/selected',
   fullScreen: {
     '{number}': '/fullScreen {number}',
   },
   toggleFullScreen: '/toggleFullScreen',
-  go: '/go',
+  go: {
+    '{cue_number}': '/go {cue_number}',
+  },
+  '{cue_number}': '/go/{cue_number}',
   lightDashboard: {
-    '{true|false}': '/lightDashboard {true|false}',
+    '{number}': '/lightDashboard {number}',
   },
   toggleLightDashboard: '/toggleLightDashboard',
   move: {
@@ -164,8 +186,6 @@ export default {
   stop: '/stop',
   hardStop: '/hardStop',
   thump: '/thump',
-  undo: '/undo',
-  redo: '/redo',
   updates: {
     '{number}': '/updates {number}',
   },
@@ -176,6 +196,10 @@ export default {
   },
   audio: {
     minVolume: '/settings/audio/minVolume',
+  },
+  outputChannelNames: '/settings/audio/outputChannelNames',
+  mic: {
+    outputChannelNames: '/settings/mic/outputChannelNames',
   },
   general: {
     minGoTime: {
@@ -191,15 +215,15 @@ export default {
   '{surfaceID}': {
     '{screenIndex}': {
       enableGrid: {
-        '{true|false}':
-          '/settings/video/surfaces/{surfaceID}/{screenIndex}/enableGrid {true|false}',
+        '{number}':
+          '/settings/video/surfaces/{surfaceID}/{screenIndex}/enableGrid {number}',
       },
     },
   },
   '{screenIndex}': {
     enableGuides: {
-      '{true|false}':
-        '/settings/video/surfaces/{surfaceID}/{screenIndex}/enableGuides {true|false}',
+      '{number}':
+        '/settings/video/surfaces/{surfaceID}/{screenIndex}/enableGuides {number}',
     },
   },
   origin: {
@@ -217,574 +241,652 @@ export default {
   resetControlPoints:
     '/settings/video/surfaces/{surfaceID}/{screenIndex}/resetControlPoints',
   cue: {
-    '{cue_identifier}': {
-      actionElapsed: '/cue/{cue_identifier}/actionElapsed',
+    '{cue_number}': {
+      actionElapsed: '/cue/{cue_number}/actionElapsed',
     },
   },
-  '{cue_identifier}': {
-    percentActionElapsed: '/cue/{cue_identifier}/percentActionElapsed',
-  },
-  allowsEditingDuration: '/cue/{cue_identifier}/allowsEditingDuration',
+  percentActionElapsed: '/cue/{cue_number}/percentActionElapsed',
+  allowsEditingDuration: '/cue/{cue_number}/allowsEditingDuration',
   armed: {
-    '{number}': '/cue/{cue_identifier}/armed {number}',
+    '{number}': '/cue/{cue_number}/armed {number}',
   },
   autoLoad: {
-    '{number}': '/cue/{cue_identifier}/autoLoad {number}',
+    '{number}': '/cue/{cue_number}/autoLoad {number}',
   },
-  cartPosition: '/cue/{cue_identifier}/cartPosition',
+  cartPosition: '/cue/{cue_number}/cartPosition',
+  '{number}': {
+    children: {
+      shallow: '/cue/{number}/children/shallow',
+    },
+  },
+  children: {
+    uniqueIDs: '/cue/{number}/children/uniqueIDs',
+  },
   colorName: {
-    '{string}': '/cue/{cue_identifier}/colorName {string}',
+    '{string}': '/cue/{cue_number}/colorName {string}',
   },
   continueMode: {
-    '{number}': '/cue/{cue_identifier}/continueMode {number}',
+    '{number}': '/cue/{cue_number}/continueMode {number}',
   },
   cueTargetId: {
-    '{string}': '/cue/{cue_identifier}/cueTargetId {string}',
+    '{string}': '/cue/{cue_number}/cueTargetId {string}',
   },
   cueTargetNumber: {
-    '{string}': '/cue/{cue_identifier}/cueTargetNumber {string}',
+    '{string}': '/cue/{cue_number}/cueTargetNumber {string}',
   },
-  currentCueTarget: {
-    '{string}': '/cue/{cue_identifier}/currentCueTarget {string}',
+  currentCueTarget: '/cue/{cue_number}/currentCueTarget',
+  tempCueTargetNumber: {
+    '{string}': '/cue/{cue_number}/tempCueTargetNumber {string}',
   },
-  tempCueTarget: {
-    '{string}': '/cue/{cue_identifier}/tempCueTarget {string}',
-  },
-  tempCueTargetId: '/cue/{cue_identifier}/tempCueTargetId',
-  currentDuration: {
-    '{number}': '/cue/{cue_identifier}/currentDuration {number}',
-  },
+  tempCueTargetId: '/cue/{cue_number}/tempCueTargetId',
+  currentDuration: '/cue/{cue_number}/currentDuration',
   tempDuration: {
-    '{number}': '/cue/{cue_identifier}/tempDuration {number}',
+    '{number}': '/cue/{cue_number}/tempDuration {number}',
   },
-  currentFileTime: '/cue/{cue_identifier}/currentFileTime',
-  defaultName: '/cue/{cue_identifier}/defaultName',
-  displayName: '/cue/{cue_identifier}/displayName',
-  listName: '/cue/{cue_identifier}/listName',
+  currentFileTime: '/cue/{cue_number}/currentFileTime',
+  defaultName: '/cue/{cue_number}/defaultName',
+  displayName: '/cue/{cue_number}/displayName',
+  listName: '/cue/{cue_number}/listName',
   duckLevel: {
-    '{number}': '/cue/{cue_identifier}/duckLevel {number}',
+    '{number}': '/cue/{cue_number}/duckLevel {number}',
   },
   duckOthers: {
-    '{number}': '/cue/{cue_identifier}/duckOthers {number}',
+    '{number}': '/cue/{cue_number}/duckOthers {number}',
   },
   duckTime: {
-    '{number}': '/cue/{cue_identifier}/duckTime {number}',
+    '{number}': '/cue/{cue_number}/duckTime {number}',
   },
   duration: {
-    '{number}': '/cue/{cue_identifier}/duration {number}',
+    '{number}': '/cue/{cue_number}/duration {number}',
   },
   fadeAndStopOthers: {
-    '{number}': '/cue/{cue_identifier}/fadeAndStopOthers {number}',
+    '{number}': '/cue/{cue_number}/fadeAndStopOthers {number}',
   },
   fadeAndStopOthersTime: {
-    '{number}': '/cue/{cue_identifier}/fadeAndStopOthersTime {number}',
+    '{number}': '/cue/{cue_number}/fadeAndStopOthersTime {number}',
   },
   fileTarget: {
-    '{string}': '/cue/{cue_identifier}/fileTarget {string}',
+    '{string}': '/cue/{cue_number}/fileTarget {string}',
   },
   flagged: {
-    '{number}': '/cue/{cue_identifier}/flagged {number}',
+    '{number}': '/cue/{cue_number}/flagged {number}',
   },
-  hasCueTargets: '/cue/{cue_identifier}/hasCueTargets',
-  hasFileTargets: '/cue/{cue_identifier}/hasFileTargets',
-  isActionRunning: '/cue/{cue_identifier}/isActionRunning',
-  isBroken: '/cue/{cue_identifier}/isBroken',
-  isLoaded: '/cue/{cue_identifier}/isLoaded',
-  isOverridden: '/cue/{cue_identifier}/isOverridden',
-  isPanicking: '/cue/{cue_identifier}/isPanicking',
-  isPaused: '/cue/{cue_identifier}/isPaused',
-  isRunning: '/cue/{cue_identifier}/isRunning',
-  isTailingOut: '/cue/{cue_identifier}/isTailingOut',
-  load: '/cue/{cue_identifier}/load',
+  hasCueTargets: '/cue/{cue_number}/hasCueTargets',
+  hasFileTargets: '/cue/{cue_number}/hasFileTargets',
+  isActionRunning: '/cue/{cue_number}/isActionRunning',
+  isBroken: '/cue/{cue_number}/isBroken',
+  isLoaded: '/cue/{cue_number}/isLoaded',
+  isOverridden: '/cue/{cue_number}/isOverridden',
+  isPanicking: '/cue/{cue_number}/isPanicking',
+  isPaused: '/cue/{cue_number}/isPaused',
+  isRunning: '/cue/{cue_number}/isRunning',
+  isTailingOut: '/cue/{cue_number}/isTailingOut',
+  load: '/cue/{cue_number}/load',
   loadAt: {
-    '{number}': '/cue/{cue_identifier}/loadAt {number}',
+    '{number}': '/cue/{cue_number}/loadAt {number}',
   },
   loadActionAt: {
-    '{number}': '/cue/{cue_identifier}/loadActionAt {number}',
+    '{number}': '/cue/{cue_number}/loadActionAt {number}',
   },
-  loadAndSetPlayhead: '/cue/{cue_identifier}/loadAndSetPlayhead',
-  maxTimeInCueSequence: '/cue/{cue_identifier}/maxTimeInCueSequence',
+  loadAndSetPlayhead: '/cue/{cue_number}/loadAndSetPlayhead',
+  maxTimeInCueSequence: '/cue/{cue_number}/maxTimeInCueSequence',
   name: {
-    '{string}': '/cue/{cue_identifier}/name {string}',
+    '{string}': '/cue/{cue_number}/name {string}',
   },
   notes: {
-    '{string}': '/cue/{cue_identifier}/notes {string}',
+    '{string}': '/cue/{cue_number}/notes {string}',
   },
   number: {
-    '{string}': '/cue/{cue_identifier}/number {string}',
+    '{string}': '/cue/{cue_number}/number {string}',
   },
-  '{number}': '/cue/{cue_identifier}/panicInTime {number}',
-  hardPause: '/cue/{cue_identifier}/hardPause',
-  togglePause: '/cue/{cue_identifier}/togglePause',
-  parent: '/cue/{cue_identifier}/parent',
-  preview: '/cue/{cue_identifier}/preview',
+  hardPause: '/cue/{cue_number}/hardPause',
+  togglePause: '/cue/{cue_number}/togglePause',
+  parent: '/cue/{cue_number}/parent',
+  preview: '/cue/{cue_number}/preview',
   preWait: {
-    '{number}': '/cue/{cue_identifier}/preWait {number}',
+    '{number}': '/cue/{cue_number}/preWait {number}',
   },
-  preWaitElapsed: '/cue/{cue_identifier}/preWaitElapsed',
-  percentPreWaitElapsed: '/cue/{cue_identifier}/percentPreWaitElapsed',
+  preWaitElapsed: '/cue/{cue_number}/preWaitElapsed',
+  percentPreWaitElapsed: '/cue/{cue_number}/percentPreWaitElapsed',
   postWait: {
-    '{number}': '/cue/{cue_identifier}/postWait {number}',
+    '{number}': '/cue/{cue_number}/postWait {number}',
   },
-  postWaitElapsed: '/cue/{cue_identifier}/postWaitElapsed',
-  percentPostWaitElapsed: '/cue/{cue_identifier}/percentPostWaitElapsed',
+  postWaitElapsed: '/cue/{cue_number}/postWaitElapsed',
+  percentPostWaitElapsed: '/cue/{cue_number}/percentPostWaitElapsed',
+  secondTriggerAction: {
+    '{number}': '/cue/{cue_number}/secondTriggerAction {number}',
+  },
+  secondTriggerOnRelease: {
+    '{number}': '/cue/{cue_number}/secondTriggerOnRelease {number}',
+  },
   soloCueInTime: {
-    '{number}': '/cue/{cue_identifier}/soloCueInTime {number}',
+    '{number}': '/cue/{cue_number}/soloCueInTime {number}',
   },
-  start: '/cue/{cue_identifier}/start',
-  startAndAutoloadNext: '/cue/{cue_identifier}/startAndAutoloadNext',
-  type: '/cue/{cue_identifier}/type',
-  uniqueID: '/cue/{cue_identifier}/uniqueID',
+  start: '/cue/{cue_number}/start',
+  startAndAutoloadNext: '/cue/{cue_number}/startAndAutoloadNext',
+  type: '/cue/{cue_number}/type',
+  uniqueID: '/cue/{cue_number}/uniqueID',
   valuesForKeys: {
-    '{json_string}': '/cue/{cue_identifier}/valuesForKeys {json_string}',
+    '{json_string}': '/cue/{cue_number}/valuesForKeys {json_string}',
   },
   valuesForKeysWithArguments: {
     '{json_string}':
-      '/cue/{cue_identifier}/valuesForKeysWithArguments {json_string}',
+      '/cue/{cue_number}/valuesForKeysWithArguments {json_string}',
   },
-  cartColumns: '/cue/{cue_identifier}/cartColumns',
-  cartRows: '/cue/{cue_identifier}/cartRows',
-  children: '/cue/{cue_identifier}/children',
-  mode: {
-    '{number}': '/cue/{cue_identifier}/mode {number}',
-  },
+  cartColumns: '/cue/{cue_number}/cartColumns',
+  cartRows: '/cue/{cue_number}/cartRows',
   moveCartCue: {
     '{child}': {
       '{row}': {
-        '{column}': '/cue/{cue_identifier}/moveCartCue/{child} {row} {column}',
+        '{column}': '/cue/{cue_number}/moveCartCue/{child} {row} {column}',
       },
     },
   },
-  '{string}': '/cue/{cue_identifier}/playhead {string}',
-  playheadNumber: {
-    '{string}': '/cue/{cue_identifier}/playheadNumber {string}',
-  },
-  playheadIdNumber: {
-    '{string}': '/cue/{cue_identifier}/playheadIdNumber {string}',
-  },
+  '{string}': '/cue/{cue_number}/playhead {string}',
   doFade: {
-    '{number}': '/cue/{cue_identifier}/doFade {number}',
+    '{number}': '/cue/{cue_number}/doFade {number}',
   },
   doPitchShift: {
-    '{number}': '/cue/{cue_identifier}/doPitchShift {number}',
+    '{number}': '/cue/{cue_number}/doPitchShift {number}',
   },
   endTime: {
-    '{number}': '/cue/{cue_identifier}/endTime {number}',
+    '{number}': '/cue/{cue_number}/endTime {number}',
   },
   gang: {
     '{inChannel}': {
       '{outChannel}': {
-        '{gang}': '/cue/{cue_identifier}/gang {inChannel} {outChannel} {gang}',
+        '{gang}': '/cue/{cue_number}/gang {inChannel} {outChannel} {gang}',
       },
     },
   },
   '{inChannel}': {
     '{outChannel}': {
-      '{gang}': '/cue/{cue_identifier}/gang/{inChannel}/{outChannel} {gang}',
+      '{gang}': '/cue/{cue_number}/gang/{inChannel}/{outChannel} {gang}',
     },
   },
   infiniteLoop: {
-    '{number}': '/cue/{cue_identifier}/infiniteLoop {number}',
+    '{number}': '/cue/{cue_number}/infiniteLoop {number}',
   },
   level: {
     '{inChannel}': {
       '{outChannel}': {
         '{decibel}':
-          '/cue/{cue_identifier}/level {inChannel} {outChannel} {decibel}',
+          '/cue/{cue_number}/level {inChannel} {outChannel} {decibel}',
       },
     },
   },
   '{outChannel}': {
-    '{decibel}':
-      '/cue/{cue_identifier}/level/{inChannel}/{outChannel} {decibel}',
+    '{decibel}': '/cue/{cue_number}/level/{inChannel}/{outChannel} {decibel}',
   },
-  levels: '/cue/{cue_identifier}/levels',
+  levels: '/cue/{cue_number}/levels',
   liveAverageLevel: {
     '{outputChannel}': {
       '{low}': {
         '{high}':
-          '/cue/{cue_identifier}/liveAverageLevel/{outputChannel} {low} {high}',
+          '/cue/{cue_number}/liveAverageLevel/{outputChannel} {low} {high}',
       },
     },
   },
   lockFadeToCue: {
-    '{number}': '/cue/{cue_identifier}/lockFadeToCue {number}',
+    '{number}': '/cue/{cue_number}/lockFadeToCue {number}',
   },
-  numChannelsIn: '/cue/{cue_identifier}/numChannelsIn',
+  numChannelsIn: '/cue/{cue_number}/numChannelsIn',
   patch: {
-    '{number}': '/cue/{cue_identifier}/patch {number}',
+    '{number}': '/cue/{cue_number}/patch {number}',
   },
-  patchList: '/cue/{cue_identifier}/patchList',
+  patchList: '/cue/{cue_number}/patchList',
   playCount: {
-    '{number}': '/cue/{cue_identifier}/playCount {number}',
+    '{number}': '/cue/{cue_number}/playCount {number}',
   },
   rate: {
-    '{number}': '/cue/{cue_identifier}/rate {number}',
+    '{number}': '/cue/{cue_number}/rate {number}',
   },
   liveRate: {
-    '{number}': '/cue/{cue_identifier}/liveRate {number}',
+    '{number}': '/cue/{cue_number}/liveRate {number}',
   },
-  sliceMarkers: '/cue/{cue_identifier}/sliceMarkers',
+  setDefaultLevels: '/cue/{cue_number}/setDefaultLevels',
+  setSilentLevels: '/cue/{cue_number}/setSilentLevels',
+  sliceMarkers: '/cue/{cue_number}/sliceMarkers',
   sliceMarker: {
-    '{index}': '/cue/{cue_identifier}/sliceMarker {index}',
+    '{index}': '/cue/{cue_number}/sliceMarker {index}',
   },
-  '{index}': '/cue/{cue_identifier}/sliceMarker/{index}',
-  time: '/cue/{cue_identifier}/sliceMarker/{index}/time',
+  '{index}': '/cue/{cue_number}/sliceMarker/{index}',
+  time: '/cue/{cue_number}/sliceMarker/{index}/time',
   addSliceMarker: {
     '{time}': {
-      '{play_count}':
-        '/cue/{cue_identifier}/addSliceMarker {time} {play_count}',
+      '{play_count}': '/cue/{cue_number}/addSliceMarker {time} {play_count}',
     },
   },
   deleteSliceMarker: {
-    '{index}': '/cue/{cue_identifier}/deleteSliceMarker {index}',
+    '{index}': '/cue/{cue_number}/deleteSliceMarker {index}',
   },
-  deleteSliceMarkers: '/cue/{cue_identifier}/deleteSliceMarkers',
+  deleteSliceMarkers: '/cue/{cue_number}/deleteSliceMarkers',
   '{time}': {
-    '{play_count}':
-      '/cue/{cue_identifier}/sliceMarker {index} {time} {play_count}',
+    '{play_count}': '/cue/{cue_number}/sliceMarker {index} {time} {play_count}',
   },
-  '{play_count}':
-    '/cue/{cue_identifier}/sliceMarker/{index} {time} {play_count}',
+  '{play_count}': '/cue/{cue_number}/sliceMarker/{index} {time} {play_count}',
   '+': {
-    '{delta}': '/cue/{cue_identifier}/sliceMarker/{index}/time/+ {delta}',
+    '{delta}': '/cue/{cue_number}/sliceMarker/{index}/time/+ {delta}',
   },
   '-': {
-    '{delta}': '/cue/{cue_identifier}/sliceMarker/{index}/time/- {delta}',
+    '{delta}': '/cue/{cue_number}/sliceMarker/{index}/time/- {delta}',
   },
-  '{delta}': '/cue/{cue_identifier}/sliceMarkers/time/+ {delta}',
+  '{delta}': '/cue/{cue_number}/sliceMarkers/time/+ {delta}',
   lastSlicePlayCount: {
-    '{play_count}': '/cue/{cue_identifier}/lastSlicePlayCount {play_count}',
+    '{play_count}': '/cue/{cue_number}/lastSlicePlayCount {play_count}',
   },
   lastSliceInfiniteLoop: {
-    '{number}': '/cue/{cue_identifier}/lastSliceInfiniteLoop {number}',
+    '{number}': '/cue/{cue_number}/lastSliceInfiniteLoop {number}',
   },
   sliderLevel: {
     '{channel}': {
-      '{decibel}': '/cue/{cue_identifier}/sliderLevel {channel} {decibel}',
+      '{decibel}': '/cue/{cue_number}/sliderLevel {channel} {decibel}',
     },
   },
   '{channel}': {
-    '{decibel}': '/cue/{cue_identifier}/sliderLevel/{channel} {decibel}',
+    '{decibel}': '/cue/{cue_number}/sliderLevel/{channel} {decibel}',
   },
-  sliderLevels: '/cue/{cue_identifier}/sliderLevels',
+  sliderLevels: '/cue/{cue_number}/sliderLevels',
   startTime: {
-    '{number}': '/cue/{cue_identifier}/startTime {number}',
+    '{number}': '/cue/{cue_number}/startTime {number}',
   },
-  channelOffset: '/cue/{cue_identifier}/channelOffset',
+  channelOffset: '/cue/{cue_number}/channelOffset',
   channels: {
-    '{number}': '/cue/{cue_identifier}/channels {number}',
+    '{number}': '/cue/{cue_number}/channels {number}',
   },
-  cueSize: '/cue/{cue_identifier}/cueSize',
+  cueSize: '/cue/{cue_number}/cueSize',
   doEffect: {
-    '{number}': '/cue/{cue_identifier}/doEffect {number}',
+    '{number}': '/cue/{cue_number}/doEffect {number}',
   },
-  effect: {
-    '{number}': '/cue/{cue_identifier}/effect {number}',
+  effectIndex: {
+    '{number}': '/cue/{cue_number}/effectIndex {number}',
   },
   effectSet: {
-    '{keyString}': {
-      '{value}': '/cue/{cue_identifier}/effectSet {keyString} {value}',
-    },
-  },
-  videoEffectSet: {
-    '{keyString}': {
-      '{value}': '/cue/{cue_identifier}/videoEffectSet {keyString} {value}',
+    '{parameter}': {
+      '{value}': '/cue/{cue_number}/effectSet {parameter} {value}',
     },
   },
   liveEffectSet: {
-    '{keyString}': {
-      '{value}': '/cue/{cue_identifier}/liveEffectSet {keyString} {value}',
-    },
-  },
-  liveVideoEffectSet: {
-    '{keyString}': {
-      '{value}': '/cue/{cue_identifier}/liveVideoEffectSet {keyString} {value}',
+    '{parameter}': {
+      '{value}': '/cue/{cue_number}/liveEffectSet {parameter} {value}',
     },
   },
   fullSurface: {
-    '{number}': '/cue/{cue_identifier}/fullSurface {number}',
+    '{number}': '/cue/{cue_number}/fullSurface {number}',
   },
-  '{gang}': '/cue/{cue_identifier}/gang {inChannel} {outChannel} {gang}',
+  '{gang}': '/cue/{cue_number}/gang {inChannel} {outChannel} {gang}',
   holdLastFrame: {
-    '{number}': '/cue/{cue_identifier}/holdLastFrame {number}',
+    '{number}': '/cue/{cue_number}/holdLastFrame {number}',
   },
   layer: {
-    '{number}': '/cue/{cue_identifier}/layer {number}',
+    '{number}': '/cue/{cue_number}/layer {number}',
   },
-  '{decibel}': '/cue/{cue_identifier}/level {inChannel} {outChannel} {decibel}',
+  '{decibel}': '/cue/{cue_number}/level {inChannel} {outChannel} {decibel}',
   '{outputChannel}': {
     '{low}': {
       '{high}':
-        '/cue/{cue_identifier}/liveAverageLevel/{outputChannel} {low} {high}',
+        '/cue/{cue_number}/liveAverageLevel/{outputChannel} {low} {high}',
     },
   },
   opacity: {
-    '{number}': '/cue/{cue_identifier}/opacity {number}',
+    '{number}': '/cue/{cue_number}/opacity {number}',
   },
   originX: {
-    '{number}': '/cue/{cue_identifier}/originX {number}',
+    '{number}': '/cue/{cue_number}/originX {number}',
   },
   originY: {
-    '{number}': '/cue/{cue_identifier}/originY {number}',
+    '{number}': '/cue/{cue_number}/originY {number}',
+  },
+  '{x}': {
+    '{y}': '/cue/{cue_number}/origin {x} {y}',
   },
   preserveAspectRatio: {
-    '{number}': '/cue/{cue_identifier}/preserveAspectRatio {number}',
+    '{number}': '/cue/{cue_number}/preserveAspectRatio {number}',
   },
   quaternion: {
     '{number': {
       number: {
         number: {
           'number}':
-            '/cue/{cue_identifier}/quaternion {number number number number}',
+            '/cue/{cue_number}/quaternion {number number number number}',
         },
       },
     },
   },
-  resetRotation: '/cue/{cue_identifier}/resetRotation',
+  resetRotation: '/cue/{cue_number}/resetRotation',
   rotateX: {
-    '{number}': '/cue/{cue_identifier}/rotateX {number}',
+    '{number}': '/cue/{cue_number}/rotateX {number}',
   },
   rotateY: {
-    '{number}': '/cue/{cue_identifier}/rotateY {number}',
+    '{number}': '/cue/{cue_number}/rotateY {number}',
   },
   rotateZ: {
-    '{number}': '/cue/{cue_identifier}/rotateZ {number}',
+    '{number}': '/cue/{cue_number}/rotateZ {number}',
+  },
+  liveRotation: {
+    Xaxis: {
+      '{number}': '/cue/{cue_number}/liveRotation/Xaxis {number}',
+    },
+  },
+  Yaxis: {
+    '{number}': '/cue/{cue_number}/liveRotation/Yaxis {number}',
+  },
+  Zaxis: {
+    '{number}': '/cue/{cue_number}/liveRotation/Zaxis {number}',
+  },
+  x: {
+    '{number}': '/cue/{cue_number}/liveRotation/x {number}',
+  },
+  y: {
+    '{number}': '/cue/{cue_number}/liveRotation/y {number}',
+  },
+  z: {
+    '{number}': '/cue/{cue_number}/liveRotation/z {number}',
   },
   scaleX: {
-    '{number}': '/cue/{cue_identifier}/scaleX {number}',
+    '{number}': '/cue/{cue_number}/scaleX {number}',
   },
   liveScaleX: {
-    '{number}': '/cue/{cue_identifier}/liveScaleX {number}',
+    '{number}': '/cue/{cue_number}/liveScaleX {number}',
   },
   scaleY: {
-    '{number}': '/cue/{cue_identifier}/scaleY {number}',
+    '{number}': '/cue/{cue_number}/scaleY {number}',
   },
   liveScaleY: {
-    '{number}': '/cue/{cue_identifier}/liveScaleY {number}',
+    '{number}': '/cue/{cue_number}/liveScaleY {number}',
   },
+  scale: {
+    '{x}': {
+      '{y}': '/cue/{cue_number}/scale {x} {y}',
+    },
+  },
+  liveScale: {
+    '{x}': {
+      '{y}': '/cue/{cue_number}/liveScale {x} {y}',
+    },
+  },
+  '{cue_number}sliceMarkers': '/cue/{cue_number}sliceMarkers',
   surfaceID: {
-    '{number}': '/cue/{cue_identifier}/surfaceID {number}',
+    '{number}': '/cue/{cue_number}/surfaceID {number}',
   },
-  surfaceList: '/cue/{cue_identifier}/surfaceList',
+  surfaceList: '/cue/{cue_number}/surfaceList',
   surfaceName: {
-    '{string}': '/cue/{cue_identifier}/surfaceName {string}',
+    '{string}': '/cue/{cue_number}/surfaceName {string}',
   },
-  surfaceSize: '/cue/{cue_identifier}/surfaceSize',
+  surfaceSize: '/cue/{cue_number}/surfaceSize',
   translationX: {
-    '{number}': '/cue/{cue_identifier}/translationX {number}',
+    '{number}': '/cue/{cue_number}/translationX {number}',
   },
   liveTranslationX: {
-    '{number}': '/cue/{cue_identifier}/liveTranslationX {number}',
+    '{number}': '/cue/{cue_number}/liveTranslationX {number}',
   },
   translationY: {
-    '{number}': '/cue/{cue_identifier}/translationY {number}',
+    '{number}': '/cue/{cue_number}/translationY {number}',
   },
   liveTranslationY: {
-    '{number}': '/cue/{cue_identifier}/liveTranslationY {number}',
+    '{number}': '/cue/{cue_number}/liveTranslationY {number}',
   },
-  cameraPatch: '/cue/{cue_identifier}/cameraPatch',
+  translation: {
+    '{x}': {
+      '{y}': '/cue/{cue_number}/translation {x} {y}',
+    },
+  },
+  liveTranslation: {
+    '{x}': {
+      '{y}': '/cue/{cue_number}/liveTranslation {x} {y}',
+    },
+  },
+  cameraPatch: '/cue/{cue_number}/cameraPatch',
   fixedWidth: {
-    '{number}': '/cue/{cue_identifier}/fixedWidth {number}',
+    '{number}': '/cue/{cue_number}/fixedWidth {number}',
   },
   text: {
-    '{string}': '/cue/{cue_identifier}/text {string}',
+    '{string}': '/cue/{cue_number}/text {string}',
   },
   liveText: {
-    '{string}': '/cue/{cue_identifier}/liveText {string}',
+    '{string}': '/cue/{cue_number}/liveText {string}',
   },
   format: {
-    '{json_string}': '/cue/{cue_identifier}/text/format {json_string}',
+    '{json_string}': '/cue/{cue_number}/text/format {json_string}',
   },
   alignment: {
-    '{alignment}': '/cue/{cue_identifier}/text/format/alignment {alignment}',
+    '{alignment}': '/cue/{cue_number}/text/format/alignment {alignment}',
   },
-  fontFamily: '/cue/{cue_identifier}/text/format/fontFamily',
-  fontStyle: '/cue/{cue_identifier}/text/format/fontStyle',
+  fontFamily: '/cue/{cue_number}/text/format/fontFamily',
+  fontStyle: '/cue/{cue_number}/text/format/fontStyle',
   fontFamilyAndStyle: {
     '{family}': {
       '{style}':
-        '/cue/{cue_identifier}/text/format/fontFamilyAndStyle {family} {style}',
+        '/cue/{cue_number}/text/format/fontFamilyAndStyle {family} {style}',
     },
   },
   fontName: {
-    '{name}': '/cue/{cue_identifier}/text/format/fontName {name}',
+    '{name}': '/cue/{cue_number}/text/format/fontName {name}',
   },
   fontSize: {
-    '{number}': '/cue/{cue_identifier}/text/format/fontSize {number}',
+    '{number}': '/cue/{cue_number}/text/format/fontSize {number}',
   },
   lineSpacing: {
-    '{number}': '/cue/{cue_identifier}/text/format/lineSpacing {number}',
+    '{number}': '/cue/{cue_number}/text/format/lineSpacing {number}',
   },
   color: {
     '{red}': {
       '{green}': {
         '{blue}': {
           '{alpha}':
-            '/cue/{cue_identifier}/text/format/color {red} {green} {blue} {alpha}',
+            '/cue/{cue_number}/text/format/color {red} {green} {blue} {alpha}',
         },
       },
     },
   },
+  backgroundColor: {
+    '{red}': {
+      '{green}': {
+        '{blue}': {
+          '{alpha}':
+            '/cue/{cue_number}/text/format/backgroundColor {red} {green} {blue} {alpha}',
+        },
+      },
+    },
+  },
+  strikethroughColor: {
+    '{red}': {
+      '{green}': {
+        '{blue}': {
+          '{alpha}':
+            '/cue/{cue_number}/text/format/strikethroughColor {red} {green} {blue} {alpha}',
+        },
+      },
+    },
+  },
+  underlineColor: {
+    '{red}': {
+      '{green}': {
+        '{blue}': {
+          '{alpha}':
+            '/cue/{cue_number}/text/format/underlineColor {red} {green} {blue} {alpha}',
+        },
+      },
+    },
+  },
+  strikethroughStyle: {
+    '{style}': '/cue/{cue_number}/text/format/strikethroughStyle {style}',
+  },
+  underlineStyle: {
+    '{style}': '/cue/{cue_number}/text/format/underlineStyle {style}',
+  },
+  outputSize: '/cue/{cue_number}/text/outputSize',
   alwaysCollate: {
-    '{number}': '/cue/{cue_identifier}/alwaysCollate {number}',
+    '{number}': '/cue/{cue_number}/alwaysCollate {number}',
   },
-  collateAndStart: '/cue/{cue_identifier}/collateAndStart',
-  flatten: '/cue/{cue_identifier}/flatten',
-  flattenCommands: '/cue/{cue_identifier}/flattenCommands',
-  lightCommandsForDisplay: '/cue/{cue_identifier}/lightCommandsForDisplay',
+  collateAndStart: '/cue/{cue_number}/collateAndStart',
   lightCommandText: {
-    '{string}': '/cue/{cue_identifier}/lightCommandText {string}',
+    '{string}': '/cue/{cue_number}/lightCommandText {string}',
   },
-  prune: '/cue/{cue_identifier}/prune',
-  pruneCommands: '/cue/{cue_identifier}/pruneCommands',
+  prune: '/cue/{cue_number}/prune',
+  pruneCommands: '/cue/{cue_number}/pruneCommands',
   removeLightCommandsMatching: {
-    '{string}': '/cue/{cue_identifier}/removeLightCommandsMatching {string}',
+    '{string}': '/cue/{cue_number}/removeLightCommandsMatching {string}',
   },
-  safeSort: '/cue/{cue_identifier}/safeSort',
-  safeSortCommands: '/cue/{cue_identifier}/safeSortCommands',
+  replaceLightCommand: {
+    '{old_command}': {
+      '{new_command}':
+        '/cue/{cue_number}/replaceLightCommand {old_command} {new_command}',
+    },
+  },
+  safeSort: '/cue/{cue_number}/safeSort',
+  safeSortCommands: '/cue/{cue_number}/safeSortCommands',
+  '{setting}': '/cue/{cue_number}/setLight {string} {setting}',
   updateLightCommand: {
     '{string}': {
-      '{number}': '/cue/{cue_identifier}/updateLightCommand {string} {number}',
+      '{number}': '/cue/{cue_number}/updateLightCommand {string} {number}',
     },
   },
   doOpacity: {
-    '{number}': '/cue/{cue_identifier}/doOpacity {number}',
+    '{number}': '/cue/{cue_number}/doOpacity {number}',
   },
   doRate: {
-    '{number}': '/cue/{cue_identifier}/doRate {number}',
+    '{number}': '/cue/{cue_number}/doRate {number}',
   },
   doRotation: {
-    '{number}': '/cue/{cue_identifier}/doRotation {number}',
+    '{number}': '/cue/{cue_number}/doRotation {number}',
   },
   doScale: {
-    '{number}': '/cue/{cue_identifier}/doScale {number}',
+    '{number}': '/cue/{cue_number}/doScale {number}',
   },
   doTranslation: {
-    '{number}': '/cue/{cue_identifier}/doTranslation {number}',
+    '{number}': '/cue/{cue_number}/doTranslation {number}',
   },
   inChannel: {
     outChannel: {
-      '{gang}': '/cue/{cue_identifier}/gang inChannel outChannel {gang}',
+      '{gang}': '/cue/{cue_number}/gang inChannel outChannel {gang}',
     },
   },
   outChannel: {
-    '{gang}': '/cue/{cue_identifier}/gang/inChannel/outChannel {gang}',
+    '{gang}': '/cue/{cue_number}/gang/inChannel/outChannel {gang}',
   },
   geoMode: {
-    '{number}': '/cue/{cue_identifier}/geoMode {number}',
+    '{number}': '/cue/{cue_number}/geoMode {number}',
   },
   '{number': {
     number: {
       number: {
-        'number}':
-          '/cue/{cue_identifier}/quaternion {number number number number}',
+        'number}': '/cue/{cue_number}/quaternion {number number number number}',
       },
     },
   },
+  rotation: {
+    '{number}': '/cue/{cue_number}/rotation {number}',
+  },
+  rotationType: {
+    '{number}': '/cue/{cue_number}/rotationType {number}',
+  },
+  '{y}': '/cue/{cue_number}/scale {x} {y}',
+  setLevelsFromTarget: '/cue/{cue_number}/setLevelsFromTarget',
+  setGeometryFromTarget: '/cue/{cue_number}/setGeometryFromTarget',
   stopTargetWhenDone: {
-    '{number}': '/cue/{cue_identifier}/stopTargetWhenDone {number}',
+    '{number}': '/cue/{cue_number}/stopTargetWhenDone {number}',
   },
   willFade: {
     '{row}': {
       '{column}': {
-        '{number}': '/cue/{cue_identifier}/willFade {row} {column} {number}',
+        '{number}': '/cue/{cue_number}/willFade {row} {column} {number}',
       },
     },
   },
   customString: {
-    '{string}': '/cue/{cue_identifier}/customString {string}',
+    '{string}': '/cue/{cue_number}/customString {string}',
   },
   messageType: {
-    '{number}': '/cue/{cue_identifier}/messageType {number}',
+    '{number}': '/cue/{cue_number}/messageType {number}',
   },
   qlabCommand: {
-    '{number}': '/cue/{cue_identifier}/qlabCommand {number}',
+    '{number}': '/cue/{cue_number}/qlabCommand {number}',
   },
   qlabCueNumber: {
-    '{string}': '/cue/{cue_identifier}/qlabCueNumber {string}',
+    '{string}': '/cue/{cue_number}/qlabCueNumber {string}',
   },
   qlabCueParameters: {
-    '{string}': '/cue/{cue_identifier}/qlabCueParameters {string}',
+    '{string}': '/cue/{cue_number}/qlabCueParameters {string}',
   },
   rawString: {
-    '{string}': '/cue/{cue_identifier}/rawString {string}',
+    '{string}': '/cue/{cue_number}/rawString {string}',
   },
   udpString: {
-    '{string}': '/cue/{cue_identifier}/udpString {string}',
+    '{string}': '/cue/{cue_number}/udpString {string}',
   },
   byte1: {
-    '{number}': '/cue/{cue_identifier}/byte1 {number}',
+    '{number}': '/cue/{cue_number}/byte1 {number}',
   },
   byte2: {
-    '{number}': '/cue/{cue_identifier}/byte2 {number}',
+    '{number}': '/cue/{cue_number}/byte2 {number}',
   },
   byteCombo: {
-    '{number}': '/cue/{cue_identifier}/byteCombo {number}',
+    '{number}': '/cue/{cue_number}/byteCombo {number}',
   },
   channel: {
-    '{number}': '/cue/{cue_identifier}/channel {number}',
+    '{number}': '/cue/{cue_number}/channel {number}',
   },
   command: {
-    '{number}': '/cue/{cue_identifier}/command {number}',
+    '{number}': '/cue/{cue_number}/command {number}',
   },
   commandFormat: {
-    '{number}': '/cue/{cue_identifier}/commandFormat {number}',
+    '{number}': '/cue/{cue_number}/commandFormat {number}',
   },
   controlNumber: {
-    '{number}': '/cue/{cue_identifier}/controlNumber {number}',
+    '{number}': '/cue/{cue_number}/controlNumber {number}',
   },
   controlValue: {
-    '{number}': '/cue/{cue_identifier}/controlValue {number}',
+    '{number}': '/cue/{cue_number}/controlValue {number}',
   },
   deviceID: {
-    '{number}': '/cue/{cue_identifier}/deviceID {number}',
+    '{number}': '/cue/{cue_number}/deviceID {number}',
   },
   endValue: {
-    '{number}': '/cue/{cue_identifier}/endValue {number}',
+    '{number}': '/cue/{cue_number}/endValue {number}',
   },
   hours: {
-    '{number}': '/cue/{cue_identifier}/hours {number}',
+    '{number}': '/cue/{cue_number}/hours {number}',
   },
   minutes: {
-    '{number}': '/cue/{cue_identifier}/minutes {number}',
+    '{number}': '/cue/{cue_number}/minutes {number}',
   },
   seconds: {
-    '{number}': '/cue/{cue_identifier}/seconds {number}',
+    '{number}': '/cue/{cue_number}/seconds {number}',
   },
   frames: {
-    '{number}': '/cue/{cue_identifier}/frames {number}',
+    '{number}': '/cue/{cue_number}/frames {number}',
   },
   subframes: {
-    '{number}': '/cue/{cue_identifier}/subframes {number}',
+    '{number}': '/cue/{cue_number}/subframes {number}',
   },
   macro: {
-    '{number}': '/cue/{cue_identifier}/macro {number}',
+    '{number}': '/cue/{cue_number}/macro {number}',
   },
   qList: {
-    '{string}': '/cue/{cue_identifier}/qList {string}',
+    '{string}': '/cue/{cue_number}/qList {string}',
   },
   qNumber: {
-    '{string}': '/cue/{cue_identifier}/qNumber {string}',
+    '{string}': '/cue/{cue_number}/qNumber {string}',
   },
   qPath: {
-    '{string}': '/cue/{cue_identifier}/qPath {string}',
+    '{string}': '/cue/{cue_number}/qPath {string}',
   },
   status: {
-    '{number}': '/cue/{cue_identifier}/status {number}',
+    '{number}': '/cue/{cue_number}/status {number}',
   },
   timecodeFormat: {
-    '{number}': '/cue/{cue_identifier}/timecodeFormat {number}',
+    '{number}': '/cue/{cue_number}/timecodeFormat {number}',
   },
   timecodeString: {
-    '{string}': '/cue/{cue_identifier}/timecodeString {string}',
+    '{string}': '/cue/{cue_number}/timecodeString {string}',
   },
   startNextCueWhenSliceEnds: {
-    '{number}': '/cue/{cue_identifier}/startNextCueWhenSliceEnds {number}',
+    '{number}': '/cue/{cue_number}/startNextCueWhenSliceEnds {number}',
   },
   stopTargetWhenSliceEnds: {
-    '{number}': '/cue/{cue_identifier}/stopTargetWhenSliceEnds {number}',
+    '{number}': '/cue/{cue_number}/stopTargetWhenSliceEnds {number}',
   },
-  compileSource: '/cue/{cue_identifier}/compileSource',
-  scriptSource: '/cue/{cue_identifier}/scriptSource',
+  compileSource: '/cue/{cue_number}/compileSource',
+  scriptSource: '/cue/{cue_number}/scriptSource',
 }
