@@ -1,34 +1,6 @@
 // @ts-ignore
 import Osc from 'osc'
 
-type IncomingQlabMessage = {
-  oscMsg: QlabResponse
-  timeTag: any
-  info: object
-}
-
-type QlabArg =
-  | {
-      type: 's'
-      value: string
-    }
-  | {
-      type: 'i'
-      value: number
-    }
-
-enum Mode {
-  'timeline' = 3,
-  'enter' = 1,
-  'next' = 2,
-  'random' = 4,
-}
-
-type QlabResponse = {
-  address: string
-  args: QlabArg
-}
-
 export class Qlab {
   osc: any
   messageCallback:
@@ -302,3 +274,31 @@ qlab.send({
   ],
 })
  */
+
+type IncomingQlabMessage = {
+  oscMsg: QlabResponse
+  timeTag: any
+  info: object
+}
+
+type QlabArg =
+  | {
+      type: 's'
+      value: string
+    }
+  | {
+      type: 'i'
+      value: number
+    }
+
+enum Mode {
+  'timeline' = 3,
+  'enter' = 1,
+  'next' = 2,
+  'random' = 4,
+}
+
+type QlabResponse = {
+  address: string
+  args: QlabArg
+}
