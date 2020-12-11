@@ -11,9 +11,11 @@
   "author": "Josh Mu <hello@joshmu.dev> (https://joshmu.dev/)",
   "license": "MIT",
   "dependencies": {
+    "execa": "^5.0.0",
     "osc": "^2.4.1"
   },
   "devDependencies": {
+    "@types/execa": "^2.0.0",
     "@types/node": "^14.14.12",
     "rimraf": "^3.0.2",
     "ts-node": "^9.1.1",

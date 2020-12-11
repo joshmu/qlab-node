@@ -1,6 +1,8 @@
 // @ts-ignore
 import Osc from 'osc'
 
+import { getLocalIp } from './helpers'
+
 export class Qlab {
   osc: any
   messageCallback:
@@ -118,8 +120,11 @@ export class Qlab {
 
 ;(async () => {
   console.log('START')
-  // todo: get local ip dynamically
-  const qlab = new Qlab('192.168.0.25')
+
+  const localIp = await getLocalIp()
+  console.log({ localIp })
+
+  const qlab = new Qlab(localIp)
 
   // * now we can use async/await
   await qlab.getCueList().then(qlabMsg => {
